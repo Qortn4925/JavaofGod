@@ -8,9 +8,15 @@ public class ArrayInitValue {
     }
     public  void referencTypes(){
         String[] starr = new String[2];
+        starr[0] = "abbbb";
+
         ArrayInitValue[] arAr = new ArrayInitValue[2];
-        System.out.println("arAr = " + arAr[0]);
-        System.out.println("starr = " + starr[0]);
+        arAr[0] = new ArrayInitValue();
+        System.out.println("arAr = " + arAr[0]);   //  abbbb
+        System.out.println("arAr = " + arAr[1]);    //  > null
+        System.out.println("starr = " + starr[0]);  //  ?? 객체 생성자
+        System.out.println("starr = " + starr[1]); // > null
+        System.out.println("arAr = " + arAr);
 
     }
 
