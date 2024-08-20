@@ -3,7 +3,15 @@ package ch07;
 public class ArrayInitValue {
     public static void main(String[] args) {
         ArrayInitValue ar = new ArrayInitValue();
-        ar.primitivTypes();
+//        ar.primitivTypes();
+        ar.referencTypes();
+    }
+    public  void referencTypes(){
+        String[] starr = new String[2];
+        ArrayInitValue[] arAr = new ArrayInitValue[2];
+        System.out.println("arAr = " + arAr[0]);
+        System.out.println("starr = " + starr[0]);
+
     }
 
     public void primitivTypes() {
