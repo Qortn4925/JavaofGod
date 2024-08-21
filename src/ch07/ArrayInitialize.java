@@ -5,6 +5,12 @@ public class ArrayInitialize {
         ArrayInitialize array =new ArrayInitialize();
         array.otherInit();
         System.out.println(array.getMonth(10));
+
+       String [] sta = new String[2];
+        System.out.println(sta);
+       String str ;
+
+
     }
 
     public  void otherInit(){
