@@ -1,4 +1,4 @@
-package Test;
+package ch07.Test;
 
 public class ManageHeight {
     int [][] gradeHeight =new int[5][];
