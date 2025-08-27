@@ -18,5 +18,8 @@ public class PayMain0 {
         payService.processPay(payOption2, amount2);
 
         payService.processPay(payOption,amount3);
+
+        payService.processPay("other",1000);
+
     }
 }
