@@ -17,6 +17,10 @@ public class ConsumerEx {
             }
         };
 
+        // 메소드 참조
+        CustomInterface<String> customInterfaceEx2 = ConsumerEx::sayB;
+
+
         String a = s.myCall();
         String a1 = s1.myCall();
         System.out.println(s);
@@ -27,8 +31,13 @@ public class ConsumerEx {
         s.printDefault();
 
 
-            customInterfaceEx1.myCall();
+            System.out.println(customInterfaceEx1.myCall());
+            System.out.println(customInterfaceEx2.myCall());
 
 
+    }
+
+    public static String sayB () {
+        return  "B";
     }
 }
