@@ -1,4 +1,4 @@
-package leetcode.p383;
+package algoritm.strategy.leetcode.p383;
 
 import java.util.HashMap;
 import java.util.Map;

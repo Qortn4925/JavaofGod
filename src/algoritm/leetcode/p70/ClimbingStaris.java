@@ -1,4 +1,4 @@
-package leetcode.p70;
+package algoritm.strategy.leetcode.p70;
 
 public class ClimbingStaris {
     public int findPath(int k){

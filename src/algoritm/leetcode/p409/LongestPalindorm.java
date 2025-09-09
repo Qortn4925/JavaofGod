@@ -1,4 +1,4 @@
-package leetcode.p409;
+package algoritm.strategy.leetcode.p409;
 
 import java.util.HashMap;
 import java.util.Map;
