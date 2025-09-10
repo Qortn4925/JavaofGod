@@ -10,7 +10,7 @@ public class BuilderEx {
 
         Calzone calzone = new Calzone.Builder().addTopping(Pizza.Topping.HAM).sauceInside().build();
 
-
+        System.out.println("calzone.toppings = " + calzone.toppings);
         System.out.println("ny = " +  nyPizza.toString());
         System.out.println("calzone = " +  calzone.toString());
 
