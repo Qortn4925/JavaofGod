@@ -32,14 +32,26 @@ public class SpellChecker {
     public List<String> suggestions(String type) {}
 */
 
-//    private final Lexicon dictionary;
-//
-//    public SpellChecker(Lexicon dictionary) {
-//        this.dictionary = Objects.requireNonNull(dictionary);
-//    }
-//
-//    public  boolean isValid(String word) {}
-//
-//    public List<String> suggestions(String type) {}
+    private final Lexicon dictionary;
+
+    public SpellChecker(Lexicon dictionary) {
+        this.dictionary = Objects.requireNonNull(dictionary);
+    }
+
+    public  boolean isValid(String word) {
+
+       if( dictionary.contains(word)){
+           System.out.println("포함");
+           return  true;
+       }else {
+           System.out.println("포함 x");
+           return  false;
+       }
+
+    }
+
+    public List<String> suggestions(String type) {
+       return dictionary.suggestions(type);
+    }
 }
 
