@@ -1,4 +1,4 @@
-package effectivjava.ch2.itme3;
+package effectivjava.ch2.item3;
 
 public class SingletonEx {
     // 1번 , private 생성자로 두고  멤버변수로 접근 ( 컴파일시 하나만 생성되는게 자명해짐 )

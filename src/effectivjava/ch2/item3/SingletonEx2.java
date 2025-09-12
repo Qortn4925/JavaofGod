@@ -1,4 +1,4 @@
-package effectivjava.ch2.itme3;
+package effectivjava.ch2.item3;
 
 public enum SingletonEx2 {
     INSTANCE;

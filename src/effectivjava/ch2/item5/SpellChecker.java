@@ -1,4 +1,4 @@
-package effectivjava.ch2.itme5;
+package effectivjava.ch2.item5;
 
 import java.util.List;
 import java.util.Objects;
