@@ -78,7 +78,7 @@ public class ValidParentheses20 {
 
             if(s.isEmpty()) return  true;
 
-
+            return false;
         }
 
     }
