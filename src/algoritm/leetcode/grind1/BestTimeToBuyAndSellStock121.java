@@ -60,6 +60,17 @@ public class BestTimeToBuyAndSellStock121 {
         return  maxProfit ==0? 0:maxProfit;
     }
 
+    public static int maxProfit4(int [] prices) {
+        if (prices == null || prices.length == 0) throw new IllegalArgumentException();
+        int maxSoFar = prices[0];
+        int maxEndingHere = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            maxEndingHere = Math.max(prices[i], maxEndingHere + prices[i]);
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+        }
+        return maxSoFar;
+    }
+
     public static void main(String[] args) {
         int[] arr = {2,4,1};
 
