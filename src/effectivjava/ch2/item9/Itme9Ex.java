@@ -3,7 +3,7 @@ package effectivjava.ch2.item9;
 import java.io.*;
 
 public class Itme9Ex {
-
+    private static final int  BUFFER_SIZE=10;
     // 자원이 하나인
     static String firstLinoOfFile(String path) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -19,7 +19,7 @@ public class Itme9Ex {
         try {
             OutputStream out = new FileOutputStream(dst);
             try {
-                byte[] buf = new Byte[BUFFER_SIZE];
+                byte[] buf = new byte[BUFFER_SIZE];
                 int n;
                 while ((n = in.read(buf)) >= 0)
                     out.write(buf,0,n);
@@ -30,5 +30,21 @@ public class Itme9Ex {
             in.close();
         }
     }
+
+    // try-with -resource
+    static String firstLineOfFiles(String path) throws  IOException{
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            return br.readLine();
+        }
+    }
+
+    static void copy2(String src,String dst) throws IOException{
+        try(InputStream in = new FileInputStream(src); OutputStream out = new FileOutputStream(dst)){
+            byte[] buf = new byte[BUFFER_SIZE];
+            int n ;
+            while((n = in.read(buf))>=0) out.write(buf, 0, n);
+        }
+    }
+
 
 }
