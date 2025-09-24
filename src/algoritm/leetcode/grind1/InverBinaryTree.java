@@ -2,6 +2,7 @@ package algoritm.leetcode.grind1;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class InverBinaryTree {
 
@@ -52,5 +53,25 @@ public class InverBinaryTree {
             if(current.right!=null) queue.add(current.right);
         }
 return  root;
+    }
+
+    public TreeNode invertTree3(TreeNode root) {
+        if(root==null ){
+            return root;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(root);
+        while(!stack.isEmpty()){
+            TreeNode current = stack.pop();
+
+            TreeNode temp = current.left;
+            current.left=current.right;
+            current.right=temp;
+
+            if(current.right!=null) stack.push(current.right);
+            if(current.left!=null) stack.push(current.left);
+        }
+        return  root;
     }
 }
