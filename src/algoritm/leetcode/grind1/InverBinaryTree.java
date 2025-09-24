@@ -1,5 +1,8 @@
 package algoritm.leetcode.grind1;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class InverBinaryTree {
 
     public class TreeNode {
@@ -21,7 +24,6 @@ public class InverBinaryTree {
             return root;
         }
         TreeNode temp = new TreeNode();
-
         temp=root.left;
         root.left=root.right;
         root.right = temp;
@@ -32,4 +34,23 @@ public class InverBinaryTree {
     }
 
 
+    // Queue를 통한 bfs 구현
+    public TreeNode invertTree2(TreeNode root){
+
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            TreeNode current = queue.poll();
+
+            TreeNode temp = current.left;
+            current.left=current.right;
+            current.right=temp;
+
+            if(current.left!=null) queue.add(current.left);
+            if(current.right!=null) queue.add(current.right);
+        }
+return  root;
+    }
 }
