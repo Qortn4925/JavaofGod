@@ -25,13 +25,18 @@ public class DivideConquerEx3 {
     }
 
     public static  void normalize(int [] result) {
-
-        for(int i=result.length; i<0; i--) {
-            if(i>1) {
-                result[i-1] =result[i]/10 +result[i-1];
-                result[i] = result[i]%10;
+        for(int i=0; i+1<result.length;++i) {
+            if(result[i]<0) {
+                int borrow=(Math.abs(result[i])+9)/10;
+                result[i+1]-=borrow;
+                result[i]+=borrow *10;
+            }else{
+                result[i+1] = result[i]/10;
+                result[i] %=10;
             }
         }
+
+
 
     }
 
