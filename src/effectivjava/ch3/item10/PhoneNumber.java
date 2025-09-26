@@ -2,7 +2,7 @@ package effectivjava.ch3.item10;
 
 import java.util.Objects;
 
-public final class PhoneNumber {
+public final class PhoneNumber implements Cloneable {
     private final short areaCode , prefix, lineNum;
     private int hashCode=0;
     public PhoneNumber(int areaCode, int prefix, int lineNum) {
@@ -66,5 +66,15 @@ public final class PhoneNumber {
         }catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "PhoneNumber{" +
+                "areaCode=" + areaCode +
+                ", prefix=" + prefix +
+                ", lineNum=" + lineNum +
+                ", hashCode=" + hashCode +
+                '}';
     }
 }

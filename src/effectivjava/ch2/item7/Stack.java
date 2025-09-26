@@ -3,7 +3,7 @@ package effectivjava.ch2.item7;
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
-public class Stack {
+public class Stack implements  Cloneable {
     public Object []  elements;
     private int size= 0;
     private static final int DEFAULT_INITIAL_CAPACITY=16;
@@ -34,4 +34,22 @@ public class Stack {
     }
 
 
+    @Override
+    public Stack clone(){
+        try {
+            Stack result = (Stack) super.clone();
+            result.elements = elements.clone();
+            return result;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Stack{" +
+                "elements=" + Arrays.toString(elements) +
+                ", size=" + size +
+                '}';
+    }
 }
