@@ -57,4 +57,14 @@ public final class PhoneNumber {
         }
         return  result;
     }
+
+    // 모든 필드가 기본타입. 불변객체를 참조한다면
+    @Override
+    public PhoneNumber clone() {
+        try{
+            return (PhoneNumber)  super.clone();
+        }catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
