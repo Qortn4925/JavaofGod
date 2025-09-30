@@ -1,5 +1,7 @@
 package algoritm.leetcode.grind2;
 
+import java.util.Stack;
+
 public class BalancedBinaryTree {
 
     class TreeNode {
@@ -21,6 +23,7 @@ public class BalancedBinaryTree {
         }
     }
         class Solution {
+        /*
             public boolean isBalanced(TreeNode root) {
 
 
@@ -42,6 +45,17 @@ public class BalancedBinaryTree {
                 int rightDepth = checkNode(root.right);
 
                 return 1 + Math.max(leftDepth, rightDepth);
+            }
+
+         */
+
+            public boolean isBalanced(TreeNode root) {
+                Stack<Integer> stack = new Stack<>();
+                TreeNode current = new TreeNode();
+                while(root!=null) {
+                    stack.add(root.val);
+                    current=current.
+                }
             }
         }
 
