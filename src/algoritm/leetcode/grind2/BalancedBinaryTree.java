@@ -54,9 +54,12 @@ public class BalancedBinaryTree {
                 TreeNode current = new TreeNode();
                 while(root!=null) {
                     stack.add(root.val);
-                    current=current.
+//                    current=current.
                 }
+
+                return true;
             }
+
         }
 
 }
