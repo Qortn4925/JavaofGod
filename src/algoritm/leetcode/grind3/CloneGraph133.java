@@ -27,12 +27,10 @@ public class CloneGraph133 {
     // 자 다음 고민은 그러면 ,첫 시작후 다음단계로 넘어가는 과정은 어떻게 할것인가. + 중복처리는 어떻게?
     public Node cloneGraph(Node node) {
         if(node ==null) return null;
-
         HashMap<Node, Node> map = new HashMap<>();
         Queue<Node> queue = new LinkedList<>();
         queue.add(node);
         map.put(node, new Node(node.val));
-
         while (!queue.isEmpty()) {
             Node curr = queue.poll();
             for(Node neighbor: curr.neighbors){
