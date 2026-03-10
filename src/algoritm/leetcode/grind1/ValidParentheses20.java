@@ -80,7 +80,29 @@ public class ValidParentheses20 {
 
             return false;
         }
+        public boolean isValid4(String s) {
+            Stack<Character> stack = new Stack<>();
 
+            //  짝수가 아니면  어차피 오류임
+            if (s.length()%2!=0) return false;
+
+            for(Character item:s.toCharArray()){
+                if(item.equals('(') || item.equals('{') || item.equals('['))
+                    stack.push(item);
+                else {
+                    if(stack.isEmpty()) return false;
+                    Character bracket= stack.pop();
+                    if( item.equals(']') && ! bracket.equals('[')) return false;
+                    else if( item.equals(')') && ! bracket.equals('(')) return false;
+                    else if( item.equals('}') && ! bracket.equals('{')) return false;
+
+                }
+            }
+
+            return stack.isEmpty();
+
+
+        }
     }
     public static void main(String[] args) {
         String s ="()";
