@@ -30,6 +30,7 @@ public class BinaryTreeLevelOrderTraversal102 {
             if(root.left==null && root.right==null) return null;
             treeSearch(root.left,deepth+1);
             treeSearch(root.right,deepth+1);
+            return  null;
         }
     }
 }
