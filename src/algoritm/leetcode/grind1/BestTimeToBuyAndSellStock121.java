@@ -70,7 +70,23 @@ public class BestTimeToBuyAndSellStock121 {
         }
         return maxSoFar;
     }
+    public int maxProfit5(int[] prices) {
+        int maxProfit=-1;
 
+        int n = prices.length;
+        int[] maxPrices = new int[n];
+        int maxPrice=0;
+        // 1. 마지막 날은 뒤에 더 이상 날짜가 없으니, 자기 자신을 최고가로 세팅.
+        maxPrices[n - 1] = prices[n - 1];
+        for(int i=prices.length-1; i>-1; i--) {
+            maxPrice=Math.max(maxPrice,prices[i]);
+            maxPrices[i]=maxPrice;
+        }
+        for (int i =0; i<prices.length;i++){
+            maxProfit=Math.max(maxPrices[i]-prices[i],maxProfit);
+        }
+        return Math.max(0,maxProfit);
+    }
     public static void main(String[] args) {
         int[] arr = {2,4,1};
 
